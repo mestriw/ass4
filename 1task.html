@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример</title>
+  <style>
+    body {
+      background-image: url('./images/y2k-background-cool-simple-geometric-posters-set-checkerboard-backgrounds-pastel-colors_719432-351.avif');
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .calc {
+      
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100vw;
+      height: 60vh;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100vw;
+      height: 60vh;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background-color: white;
+      padding: 20px;
+      border-radius: 45px;
+      box-shadow: 0 0 10px rgba(1, 1, 1, 1);
+    }
+
+    #dynamicText {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #image {
+      width: 300px;
+      height: 300px;
+      margin-top: 20px;
+      display: block;
+    }
+    button {
+    padding: 10px 20px;
+    background-color: #30759a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #000000;
+}
+.calc button {
+  margin: 5px;
+  padding: 10px;
+  width: 80px;
+}
+  </style>
+</head>
+
+<body>
+  <section>
+    <div id="container">
+      <button id="colorButton">change background color</button> <br>
+      <button id="textButton">show text</button> <br>
+      <button id="imageButton">change image</button> <br>
+      
+      <div id="dynamicText">uwu :3</div>
+      <img id="image" src="./images/1626022054_840073_jpg.png">
+    </div>
+
+    <script>
+      const container = document.getElementById('container');
+      const dynamicText = document.getElementById('dynamicText');
+      const image = document.getElementById('image');
+
+      document.getElementById('colorButton').addEventListener('click', () => {
+        container.style.backgroundColor = 'gray';
+      });
+
+      document.getElementById('textButton').addEventListener('click', () => {
+        dynamicText.style.display = 'block';
+      });
+
+      document.getElementById('imageButton').addEventListener('click', () => {
+        image.src = './images/Hunter_x_Hunter_Poster.png';
+      });
+    </script>
+  </section>
+
+  <section>
+    <div style="width: 300px; height: 300px;" id="container">
+      <div class="todo-cont">
+        <h1>To-do list</h1>
+        <input type="text" id="taskInput" placeholder="write your task here"> <br><br>
+        <button onclick="addTask()">add task</button><br>
+        <ul id="taskList"></ul>
+    </div>
+
+      <script src="todo.js"></script>
+    </div>
+  </section>
+
+  <section>
+    <div style="width: 300px; height: 300px;" id="container">
+
+    <h1>sorting numbers</h1>
+    <input type="text" id="numberInput" placeholder="enter numbers by commans:"> <br>
+    <button onclick="sortNumbers('asc')">sort in ascending order</button><br>
+    <button onclick="sortNumbers('desc')">sort in descending order</button><br>
+    <h2>Result: <span id="result"></span></h2>
+    <script src="sort.js"></script>
+    </div>
+  </section>
+
+  <section>
+    <div style="width: 400px; height: 400px; padding: 20px;" id="container">
+      <h1>Calculator</h1>
+      <input type="number" id="num1" placeholder="number 1" style="width: 100%; padding: 10px;"><br><br>
+      <input type="number" id="num2" placeholder="number 2" style="width: 100%; padding: 10px;"><br><br>
+      
+      <!-- Updated button container -->
+      <div style="display: flex; justify-content: space-between; width: 100%;">
+        <button onclick="calculate('+')">+</button>
+        <button onclick="calculate('-')">-</button>
+        <button onclick="calculate('*')">*</button>
+        <button onclick="calculate('/')">/</button>
+        <button onclick="calculate('%')">%</button>
+      </div>
+      <button style="margin-top: 10px;" onclick="calculate('square')">square (first number)</button>
+  
+      <h2>Result: <span id="calcResult"></span></h2>
+      <script src="calculator.js"></script>
+    </div>
+  </section>
+  
+
+  <section>
+    <div style="width: 300px; height: 300px;" id="container">
+    <h1>Tax calculator</h1> <br>
+    <input type="number" id="carPrice" placeholder="enter a price of car"> <br>
+    <button onclick="calculateTax()">calculate a tax</button> <br>
+    <h2>tax: <span id="taxResult"></span></h2>
+    <script src="tax_calculator.js"></script>
+    </div>
+  </section>
+
+</body>
+
+</html>
